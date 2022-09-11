@@ -2,6 +2,7 @@ import { InvalidParamError } from '../errors'
 import { badRequest, ok } from '../helpers'
 import { HttpResponse } from '../protocols'
 import { findUserByEmail } from '../repositories'
+import { EncrypterAdapter } from '../utils'
 
 interface Data {
   email: string
@@ -17,7 +18,10 @@ export const signUpService = async (data: Data): Promise<HttpResponse> => {
   if (!isValidPassword(data)) {
     return badRequest(new InvalidParamError('The passwords must be equal and have at least 10 characters'))
   }
-  return ok('ok')
+
+  const encrypterAdapter = new EncrypterAdapter(data.password)
+  data.password = encrypterAdapter.encrypter()
+  return ok(data)
 }
 
 const isValidPassword = (data: Data): boolean => {
