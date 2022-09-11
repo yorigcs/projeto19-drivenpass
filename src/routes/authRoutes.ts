@@ -1,8 +1,11 @@
 import { Router } from 'express'
-import { SignUpController } from '../controllers'
-const authRouter = Router()
-const signUpController = new SignUpController()
+import { SignUpController, SignInController } from '../controllers'
 
+const signUpController = new SignUpController()
+const signInController = new SignInController()
+
+const authRouter = Router()
 authRouter.post('/sign-up', signUpController.handle)
+authRouter.post('/sign-in', signInController.handle)
 
 export { authRouter }
