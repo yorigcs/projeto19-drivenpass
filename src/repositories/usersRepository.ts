@@ -12,6 +12,15 @@ export const findUserByEmail = async (email: string): Promise<User> => {
   return user
 }
 
+export const findUserById = async (id: number): Promise<User> => {
+  const user = await prisma.user.findFirst({
+    where: {
+      id
+    }
+  })
+  return user
+}
+
 export const insertUserData = async (data: InsertUser): Promise<void> => {
   await prisma.user.create({
     data
