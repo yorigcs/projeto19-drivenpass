@@ -10,4 +10,8 @@ export class EncrypterAdapter {
   encrypter (): string {
     return bcrypt.hashSync(this.password, this.SALT)
   }
+
+  decrypter (encryptedPassword: string): boolean {
+    return bcrypt.compareSync(this.password, encryptedPassword)
+  }
 }
