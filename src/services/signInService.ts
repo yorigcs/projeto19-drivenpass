@@ -20,8 +20,8 @@ export const signInService = async (data: Data): Promise<HttpResponse> => {
     if (!isAuthorized) {
       return unauthorized(new InvalidParamError('Email or password is incorrect'))
     }
-    const tokenAdapter = new TokenAdapter(user)
-    const TOKEN = `Bearer ${tokenAdapter.generateToken()}`
+    const tokenAdapter = new TokenAdapter()
+    const TOKEN = `Bearer ${tokenAdapter.generateToken(user)}`
 
     const userData = {
       userInfo: {
