@@ -17,6 +17,7 @@ model User {
 
   credential Credential[]
   notes      Notes[]
+  cards      Cards[]
 
   @@map("users")
 }
@@ -49,4 +50,28 @@ model Notes {
   user    User @relation(fields: [user_id], references: [id])
 
   @@map("notes")
+}
+
+model Cards {
+  id Int @id @default(autoincrement())
+
+  number     String
+  name       String
+  cvc        String
+  expirate   String
+  password   String
+  is_virtual Boolean
+  type       card_type @default(BOTH)
+  tittle     String
+
+  user_id Int
+  user    User @relation(fields: [user_id], references: [id])
+
+  @@map("cards")
+}
+
+enum card_type {
+  DEBIT
+  CREDIT
+  BOTH
 }
