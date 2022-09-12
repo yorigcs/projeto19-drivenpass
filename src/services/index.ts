@@ -15,3 +15,4 @@ export * from './cardDeleteService'
 
 export * from './wifiCreateService'
 export * from './wifiSearchService'
+export * from './wifiDeleteService'

@@ -7,5 +7,5 @@ export const createWifiSchema = Joi.object({
 })
 
 export const deleteWifiSchema = Joi.object({
-  credentialId: Joi.number().required()
+  wifiId: Joi.number().required()
 })
