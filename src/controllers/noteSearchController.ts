@@ -4,19 +4,19 @@ import { noteSearchService } from '../services'
 
 interface createRequest extends Request {
   params: {
-    notedId?: string
+    noteId?: string
   }
 }
 
 export class NoteSearchController implements Controller {
   async handle (req: createRequest, res: Response): Promise<Response<any, Record<string, any>>> {
-    let notedId = parseInt(req.params.notedId)
-    if (isNaN(notedId)) {
-      notedId = null
+    let noteId = parseInt(req.params.noteId)
+    if (isNaN(noteId)) {
+      noteId = null
     }
     const { userId } = res.locals
 
-    const serviceResponse = await noteSearchService(notedId, userId)
+    const serviceResponse = await noteSearchService(noteId, userId)
     return res.status(serviceResponse.statusCode).json(serviceResponse.body)
   }
 }
