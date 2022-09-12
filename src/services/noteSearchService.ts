@@ -13,10 +13,10 @@ export const noteSearchService = async (noteId: number | null, userId: number): 
 
     const note = await findNotesById(noteId)
     if (!note) {
-      return badRequest(new InvalidParamError('This credential does not exist'))
+      return badRequest(new InvalidParamError('This note does not exist'))
     }
     if (note.user_id !== userId) {
-      return unauthorized(new InvalidParamError('This credential does not belong to you'))
+      return unauthorized(new InvalidParamError('This note does not belong to you'))
     }
 
     return ok(note)
