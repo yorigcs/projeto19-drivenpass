@@ -16,6 +16,7 @@ model User {
   password String
 
   credential Credential[]
+  notes      Notes[]
 
   @@map("users")
 }
@@ -34,4 +35,18 @@ model Credential {
   user    User @relation(fields: [user_id], references: [id])
 
   @@map("credentials")
+}
+
+model Notes {
+  id          Int    @id @default(autoincrement())
+  title       String @db.VarChar(50)
+  description String @db.VarChar(1000)
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  user_id Int
+  user    User @relation(fields: [user_id], references: [id])
+
+  @@map("notes")
 }
