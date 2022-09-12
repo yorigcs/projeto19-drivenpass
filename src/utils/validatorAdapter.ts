@@ -4,7 +4,7 @@ import { unprocessableEntity } from '../helpers'
 import { HttpResponse } from '../protocols'
 
 interface Data {
-  [key: string]: number | string
+  [key: string]: any
 }
 export class ValidatorAdapter {
   private readonly schema: Joi.ObjectSchema
