@@ -6,3 +6,4 @@ export * from './credentialSearchService'
 export * from './credentialDeleteService'
 
 export * from './noteCreateService'
+export * from './noteSearchService'
