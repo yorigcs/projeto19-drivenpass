@@ -12,6 +12,15 @@ export const findCredentialsByUserId = async (userId: number): Promise<Credentia
   return credentials
 }
 
+export const findCredentialById = async (credentialId: number): Promise<Credential> => {
+  const credentials = await prisma.credential.findUnique({
+    where: {
+      id: credentialId
+    }
+  })
+  return credentials
+}
+
 export const createCredential = async (data: InsertCredential): Promise<void> => {
   await prisma.credential.create({
     data
