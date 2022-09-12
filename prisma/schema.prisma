@@ -18,6 +18,7 @@ model User {
   credential Credential[]
   notes      Notes[]
   cards      Cards[]
+  Wifi       Wifi[]
 
   @@map("users")
 }
@@ -68,6 +69,21 @@ model Cards {
   user    User @relation(fields: [user_id], references: [id])
 
   @@map("cards")
+}
+
+model Wifi {
+  id       Int    @id @default(autoincrement())
+  name     String
+  title    String
+  password String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  user_id Int
+  user    User @relation(fields: [user_id], references: [id])
+
+  @@map("wifis")
 }
 
 enum card_type {
