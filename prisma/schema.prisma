@@ -60,9 +60,9 @@ model Cards {
   cvc        String
   expirate   String
   password   String
-  is_virtual Boolean
+  is_virtual Boolean   @default(false)
   type       card_type @default(BOTH)
-  tittle     String
+  title      String
 
   user_id Int
   user    User @relation(fields: [user_id], references: [id])
