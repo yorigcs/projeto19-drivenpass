@@ -8,3 +8,5 @@ export * from './credentialDeleteService'
 export * from './noteCreateService'
 export * from './noteSearchService'
 export * from './noteDeleteService'
+
+export * from './cardCreateService'
