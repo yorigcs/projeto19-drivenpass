@@ -14,3 +14,4 @@ export * from './cardSearchController'
 export * from './cardDeleteController'
 
 export * from './wifiCreateController'
+export * from './wifiSearchController'
