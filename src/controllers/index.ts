@@ -7,3 +7,4 @@ export * from './credentialDeleteController'
 
 export * from './noteCreateController'
 export * from './noteSearchController'
+export * from './noteDeleteController'
