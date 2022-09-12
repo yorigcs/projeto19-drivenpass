@@ -6,3 +6,7 @@ export const createCredentialSchema = Joi.object({
   username: Joi.string().required(),
   password: Joi.string().required()
 })
+
+export const deleteCredentialSchema = Joi.object({
+  credentialId: Joi.number().required()
+})

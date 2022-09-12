@@ -26,3 +26,11 @@ export const createCredential = async (data: InsertCredential): Promise<void> =>
     data
   })
 }
+
+export const deleteCredential = async (credentialId: number): Promise<void> => {
+  await prisma.credential.delete({
+    where: {
+      id: credentialId
+    }
+  })
+}
