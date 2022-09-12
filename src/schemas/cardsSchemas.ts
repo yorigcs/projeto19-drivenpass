@@ -14,5 +14,5 @@ export const createCardSchema = Joi.object({
 })
 
 export const deleteCardSchema = Joi.object({
-  credentialId: Joi.number().required()
+  cardId: Joi.number().required()
 })
