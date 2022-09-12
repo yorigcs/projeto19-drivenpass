@@ -18,7 +18,7 @@ export class AuthorizeUser {
     if (!decoded) {
       return res.status(401).send('Invalid Token')
     }
-    res.locals.user_id = decoded.id
+    res.locals.userId = decoded.id
     next()
   }
 }
