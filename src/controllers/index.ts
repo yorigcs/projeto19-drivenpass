@@ -11,3 +11,4 @@ export * from './noteDeleteController'
 
 export * from './cardsCreateController'
 export * from './cardSearchController'
+export * from './cardDeleteController'

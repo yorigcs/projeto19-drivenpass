@@ -11,3 +11,4 @@ export * from './noteDeleteService'
 
 export * from './cardCreateService'
 export * from './cardSearchService'
+export * from './cardDeleteService'
